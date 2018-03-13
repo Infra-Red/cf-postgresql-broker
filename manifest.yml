@@ -1,0 +1,12 @@
+---
+applications:
+- name: postgresql-broker
+  buildpack: go_buildpack
+  memory: 256M
+  disk_quota: 256M
+  env:
+    GOVERSION: go1.9
+    GO_INSTALL_PACKAGE_SPEC: github.com/Infra-Red/cf-postgresql-broker/cmd/postgresql-broker
+    BROKER_USERNAME: admin
+    BROKER_PASSWORD: admin
+    PG_SOURCE: postgresql://admin:password@10.0.8.4:5524/sandbox

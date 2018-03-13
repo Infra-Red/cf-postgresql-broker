@@ -1,0 +1,7 @@
+package: github.com/Infra-Red/cf-postgresql-broker
+import:
+- package: code.cloudfoundry.org/lager
+- package: github.com/kelseyhightower/envconfig
+- package: github.com/lib/pq
+- package: github.com/pivotal-cf/brokerapi
+- package: github.com/sethvargo/go-password

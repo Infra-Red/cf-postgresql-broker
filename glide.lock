@@ -1,0 +1,24 @@
+hash: ebff968e4428c9554df9a6696fe85dfe75d4c8b6ed0720d97cd32b97ca56458a
+updated: 2018-03-13T15:40:00.405786+03:00
+imports:
+- name: code.cloudfoundry.org/lager
+  version: a77e1033ba8d8e36597be5c0d384ee6054105bc2
+- name: github.com/gorilla/context
+  version: 1ea25387ff6f684839d82767c1733ff4d4d15d0a
+- name: github.com/gorilla/mux
+  version: 8a875a034c69b940914d83ea03d3f1299b4d094b
+- name: github.com/kelseyhightower/envconfig
+  version: b2c5c876e2659d9060d82e9b8494150d53854cc4
+- name: github.com/lib/pq
+  version: 88edab0803230a3898347e77b474f8c1820a1f20
+  subpackages:
+  - oid
+- name: github.com/pivotal-cf/brokerapi
+  version: a31b912e79c8cb4875840cbfbe8dc4f96f0507ab
+  subpackages:
+  - auth
+- name: github.com/sethvargo/go-password
+  version: ffbf40db2a6096ca42297c333c46e53f8d732228
+  subpackages:
+  - password
+testImports: []
