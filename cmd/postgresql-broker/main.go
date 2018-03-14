@@ -14,9 +14,9 @@ import (
 	"github.com/pivotal-cf/brokerapi"
 )
 
-func loadServices() ([]brokerapi.Service, error) {
+func loadServices(env config.Specification) ([]brokerapi.Service, error) {
 	var service brokerapi.Service
-	buf, err := ioutil.ReadFile("./catalog.json")
+	buf, err := ioutil.ReadFile(env.CatalogPath)
 	if err != nil {
 		return []brokerapi.Service{}, err
 	}
@@ -43,7 +43,7 @@ func main() {
 		Password: env.BrokerPassword,
 	}
 
-	services, err := loadServices()
+	services, err := loadServices(env)
 	if err != nil {
 		log.Fatalln(err)
 	}

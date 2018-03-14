@@ -3,10 +3,11 @@ package config
 import "github.com/kelseyhightower/envconfig"
 
 type Specification struct {
-	BrokerUsername string `envconfig:"broker_username" required:"true"`
 	BrokerPassword string `envconfig:"broker_password" required:"true"`
-	PgSource       string `envconfig:"pg_source" required:"true"`
+	BrokerUsername string `envconfig:"broker_username" required:"true"`
+	CatalogPath    string `envconfig:"catalog_path" default:"./catalog.json"`
 	LogLevel       string `envconfig:"log_level" default:"INFO"`
+	PgSource       string `envconfig:"pg_source" required:"true"`
 	Port           string `envconfig:"port" default:"8080"`
 }
 
