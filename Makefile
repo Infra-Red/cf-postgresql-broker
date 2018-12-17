@@ -6,4 +6,8 @@ push:
 
 register:
 	cf create-service-broker shared-postgresql-broker admin admin http://postgresql-broker.bosh-lite.com
-	cf enable-service-access postgresql
+	cf enable-service-access a.postgresql
+
+deregister:
+	cf purge-service-offering a.postgresql
+	cf delete-service-broker shared-postgresql-broker
