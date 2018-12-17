@@ -59,7 +59,7 @@ func (sb *postgresBroker) Bind(context context.Context, instanceID,
 
 func (sb *postgresBroker) Unbind(context context.Context, instanceID, bindingID string,
 	details brokerapi.UnbindDetails) error {
-	return sb.pgp.DropUser(context, instanceID, bindingID)
+	return sb.pgp.DisableUser(context, instanceID, bindingID)
 }
 
 func (sb *postgresBroker) Update(context context.Context, instanceID string,

@@ -133,6 +133,16 @@ func (b *PGP) DropUser(ctx context.Context, d, u string) error {
 	return err
 }
 
+func (b *PGP) DisableUser(ctx context.Context, d, u string) error {
+	dbname := b.dbname(d)
+	username := b.username(u)
+	if _, err := b.conn.Exec("REVOKE ALL PRIVILEGES ON DATABASE " + de(dbname) + " FROM " + de(username)); err != nil {
+		return err
+	}
+	_, err := b.conn.Exec("ALTER ROLE " + de(username) + " WITH NOLOGIN")
+	return err
+}
+
 // dbname prefixes the named database name
 func (b *PGP) dbname(d string) string {
 	return b.prefix + d
