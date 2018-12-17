@@ -6,7 +6,7 @@ applications:
   memory: 256M
   disk_quota: 256M
   env:
-    GOVERSION: go1.9
+    GOVERSION: go1.10
     GO_INSTALL_PACKAGE_SPEC: github.com/Infra-Red/cf-postgresql-broker/cmd/postgresql-broker
     BROKER_USERNAME: admin
     BROKER_PASSWORD: admin
